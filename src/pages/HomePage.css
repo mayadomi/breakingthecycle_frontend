@@ -1,0 +1,13 @@
+/* #rider-list {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 10px;
+    row-gap: 10px;
+    } */
+#table {
+    width:100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #141a39
+}
+
