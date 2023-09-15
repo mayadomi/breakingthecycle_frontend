@@ -1,18 +1,18 @@
 import { useState } from "react"; 
 import postLogin from "../../api/post-login";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 
 function LoginForm() {
-    const navigate = useNavigate();
-    const {isAuth, setAuth} = useContext(LoginContext)
 
+    const [loggedIn,setLoggedIn]  = useOutletContext({})
+   
     const [credentials, setCredentials] = useState({
         username: "",
         password: "",
     })
+
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const {id, value} = event.target;
@@ -25,15 +25,25 @@ function LoginForm() {
     const handleSubmit = (event) => {
 
         event.preventDefault()
+
         if(credentials.username && credentials.password) {
+            
             postLogin(
                 credentials.username,
                 credentials.password
             ).then((response) => {
-                window.localStorage.setItem("token", response.token)
-                setAuth(response != null)
-                navigate("/")
+                if (response.token !== undefined){
+                    
+                    window.localStorage.setItem("token", response.token);
+                    window.localStorage.setItem("id", response.id);
+                    const id = response.id;
+                    setLoggedIn = true
+                    navigate(`user/${id}`)
+                } else {
+                    setLoggedIn=false
+                }
             })
+
         }
     }
 

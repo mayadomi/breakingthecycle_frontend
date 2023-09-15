@@ -1,17 +1,25 @@
 import { createContext, useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
-
-
-function NavBar() {
+function NavBar(props) {
+    const { loggedIn, setLoggedIn } = props;
+  
+    const navigate = useNavigate();
+  
+    const handleClick = () => {
+      window.localStorage.removeItem("token");
+      setLoggedIn(false);
+      navigate("/");
+    };
 
     return (
     <div>
         <nav>
             <Link to="/">Home</Link>
-            <Link to="/login">Log In</Link>            
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/create-rider'>Create Rider</Link>
+            {!loggedIn && (<Link to="/login">Log In</Link>)}            
+            {!loggedIn && (<Link to='/signup'>Sign Up</Link>)}
+            {loggedIn && (<Link to='/create-rider'>Create Rider</Link>)}
+            {loggedIn && (<button onClick={handleClick}>Log Out</button>)}
         </nav><Outlet />
         </div>
         );
