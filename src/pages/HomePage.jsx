@@ -1,52 +1,64 @@
 import useRiders from "../hooks/use-riders";
 import RiderCard from "../components/RiderCard";
-
-import "./HomePage.css";
 import useDonations from "../hooks/use-donations";
 import DonationCard from "../components/DonationCard";
+import DonationPage from "./DonationPage";
+import { useNavigate } from "react-router-dom";
+
+import useAuth from "../hooks/use_authentication";
+
+import "./HomePage.css";
 
 function HomePage() {
-    const { riders, isLoading } = useRiders();
-    const { donations, isDonationLoading } = useDonations();
+    const navigate = useNavigate();
+    //const { riders, isRidersLoading, isRidersError } = useRiders();
+    const { donations, isDonationLoading, isDonationsError } = useDonations();
+    //const { auth } = useAuth()
+
     const donationSum = donations.reduce((current, donation) => current + donation.amount, 0);
-
     const recentDonations = donations.slice(-5)
-
-    // console.log(recentDonations)
-
-    
-    if (isLoading){
-        return<div>I'm still loading</div>
-    }
 
     if (isDonationLoading){
         return<div>Donations incoming</div>
     }
+    if (isDonationsError){
+        return<div>{isDonationsError.message}</div>
+    }
+
+    const handleClick = () => {
+        navigate("/donate/")
+    }
 
     return (
         <div>
-        <h1>Racing to break the cycle of domestic violence</h1>
-        <div id="fundraising-target">
-        <h1>$200,000</h1>
-        <h5>Target</h5>
-        </div>
-        <div id="amount-raised">
-        <div><h1>${donationSum}</h1></div>
-        <h5>Raised</h5>
-        </div>
-        <div id="recent-donations">
+            <h1>Racing to break the cycle of domestic violence</h1>
 
-        {recentDonations.map((donationData, key) => {
-            return <DonationCard key={key} donationData={donationData} />
-        })}
-        </div>
-        <div id="rider-list">
-                {riders.map((riderData, key) => {
+            <div id="fundraising-target">
+                <h1>$200,000</h1>
+                <h5>Target</h5>
+            </div>
+
+            <div id="amount-raised">
+                <h1>${donationSum}</h1>
+                <h5>Raised</h5>
+            </div>
+
+            <button onClick={handleClick}>Donate Now</button>
+       
+            <div id="recent-donations">
+                {recentDonations.map((donationData, key) => {
+                    return <DonationCard key={key} donationData={donationData} />
+                })}
+            </div>
+             
+            <div id="rider-list">
+                <DonationPage />
+                
+                {/* {riders.map((riderData, key) => {
                 return <RiderCard key={key} riderData={riderData} />;
-                // return <div key={key}>{projectData.title}</div>;
-            })}
-        
-        </div>
+                 })} */}
+            </div>
+
         </div>
     );
 }

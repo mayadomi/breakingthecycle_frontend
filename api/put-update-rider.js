@@ -1,16 +1,19 @@
- async function postSignup(username, first_name, last_name, email, password){
-    const url = `${import.meta.env.VITE_API_URL}/user/create/`;
+async function putUpdateRider(id, team, bio, rate, kms_ceiling){
+    const url = `${import.meta.env.VITE_API_URL}/rider/${id}`;
+    
+    const token = localStorage.getItem("token")
+
     const response = await fetch(url, {
-        method: "POST",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": "Token " + token
         },
         body: JSON.stringify({
-            "username": username,
-            "first_name": first_name,
-            "last_name": last_name,
-            "email": email,
-            "password":password,
+            "team": team,
+            "bio": bio,
+            "rate": rate,
+            "kms_ceiling": kms_ceiling
         })
     })
 
@@ -24,9 +27,9 @@
         const errorMessage = data?.detail ?? fallbackError
         throw new Error(errorMessage)
     }
-
     return await response.json()
 
 }
 
-export default postSignup
+
+export default putUpdateRider

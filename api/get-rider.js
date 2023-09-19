@@ -1,9 +1,9 @@
 async function getRider(id) {
-    const url = `${import.meta.env.VITE_API_URL}/rider/${id}`
-    console.log(url)
 
+    const url = `${import.meta.env.VITE_API_URL}/rider/${id}`
+    
     const response = await fetch(url, { method: "GET"});
-    console.log(response)
+ 
     if (!response.ok) {
         const fallbackError = "Error fetching rider";
     

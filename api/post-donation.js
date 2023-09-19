@@ -1,5 +1,7 @@
-async function postCreateRider(team, bio, rate, kms_ceiling){
-    const url = `${import.meta.env.VITE_API_URL}/riders/`;
+async function postDonation(rider, amount, comment, anonymous){
+    const url = `${import.meta.env.VITE_API_URL}/donations/`;
+
+    console.log(rider)
     
     const token = localStorage.getItem("token")
 
@@ -10,22 +12,22 @@ async function postCreateRider(team, bio, rate, kms_ceiling){
             "Authorization": "Token " + token
         },
         body: JSON.stringify({
-            "team": team,
-            "bio": bio,
-            "rate": rate,
-            "kms_ceiling": kms_ceiling
+            "rider": rider,
+            "amount": amount,
+            "comment": comment,
+            "anonymous": anonymous
         })
     })
 
     if (!response.ok) {
-        const fallbackError = `Error trying to create user account`
+        const fallbackError = `Error trying to process donation`
 
         const data = await response.json().catch(() => {
             throw new Error(fallbackError);
         })
         
         // console.log(data)
-        const errorMessage = data ?? fallbackError
+        const errorMessage = data?.detail ?? fallbackError
         throw new Error(errorMessage)
     }
 
@@ -35,4 +37,4 @@ async function postCreateRider(team, bio, rate, kms_ceiling){
 }
 
 
-export default postCreateRider
+export default postDonation

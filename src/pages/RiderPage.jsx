@@ -1,9 +1,12 @@
 import useRider from "../hooks/use-rider";
 import { useParams } from 'react-router-dom';
+import DonationForm from'../components/DonationForm'
+
 
 function RiderPage() {
-    // return <h1>This is the project page.</h1>;
+
     const {id} = useParams();
+
     const {rider, isLoading, error} = useRider(id)
     
     if (isLoading){
@@ -13,12 +16,16 @@ function RiderPage() {
         <div>
             <h2>{rider.rider_user_name}</h2>
             <h5>Created at: {rider.date_created}</h5>
-            {/* <h3>{`Status: ${rider.is_active}`}</h3> */}
             <h3>Bio:</h3>
             <h5>{rider.bio}</h5>
             <h3>Kms to ride: {rider.kms_to_ride}kms </h3>
+            
+            <div>
+            <h3>Sponsor me</h3>
+            <DonationForm></DonationForm>
+            </div>
+
             <h3>Donations</h3>
-            <button>Donate now!</button>
             <ul>
                 {rider.donations.map((donationData, key) => {
                     return (

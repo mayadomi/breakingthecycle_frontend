@@ -1,16 +1,19 @@
 import { useState } from "react"; 
-import postSignUp from "../../api/post-signup";
-import { useNavigate, useParams, useOutletContext } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import postCreateAccount from "../../api/post-create-account";
+import postLogin from "../../api/post-login";
 
 
-
-function SignupForm() {
+function CreateAccountForm() {
 
     const navigate = useNavigate();
+
     const authToken = window.localStorage.getItem("token")
+    //const {postSignUp} = useContext(AuthContext)
 
-    // const { id } = useParams()
-
+    const [errorMessage, setErrorMessage] = useState("")
+    const [formInvalid, setFormInvalid] = useState("")
+    
     const [signupdetails, setSignupDetails] = useState({
         username: "",
         first_name: "",
@@ -19,14 +22,16 @@ function SignupForm() {
         password: "",
     })
 
-    // const [userid, setUserID] = useState(Number)
-
     const handleChange = (event) => {
+        if (!authToken){
         const {id, value} = event.target;
         setSignupDetails((prevDetails) => ({
             ...prevDetails,
             [id]: value,
         }))
+    }   else {
+        setFormInvalid("Already signed in")
+    }
     }
 
     const handleSubmit = (event) => {
@@ -36,24 +41,27 @@ function SignupForm() {
         if (!authToken){
 
             if(signupdetails.username && signupdetails.password && signupdetails.first_name && signupdetails.last_name && signupdetails.email) {
-                console.log("here")
-                postSignUp(
+                postCreateAccount(
                     signupdetails.username,
                     signupdetails.first_name,
                     signupdetails.last_name,
                     signupdetails.email,
                     signupdetails.password
-                ).then((response) => {
-                    console.log(response)
-                    // setUserID = response.id
-                    // window.localStorage.setItem("token", response.token)
-                    navigate("/login")
-                })
+                ).then(() => {
+                    postLogin(signupdetails.username, signupdetails.password).then(
+                        (response) => {
+                            window.localStorage.setItem("token", response.token)
+                            window.localStorage.setItem("id", response.id)
+                            navigate(`../user/${window.localStorage.getItem("id")}`)
+                        }
+                    ).catch((error)=>{setErrorMessage(`${[error.message]}`)})
+                }).catch((error)=>{setErrorMessage(`${[error.message]}`)})
+                
             } else {
-                console.log(signupdetails)
+                setFormInvalid("Please complete the form")
             }
         } else {
-            navigate("/account")
+            setFormInvalid("Already signed in")
         }
         }
 
@@ -87,7 +95,12 @@ function SignupForm() {
             <input type="password" id="password" placeholder="Password" onChange={handleChange} />
         </div> 
         <button type="submit" onClick={handleSubmit}>Sign Up</button>
+        <div>
+            <p>{errorMessage}</p>
+            <sub className={errorMessage ? "" : "hidden"}><p>{formInvalid}</p></sub>
+            
+        </div>
     </form>
     );
 }
-export default SignupForm   
+export default CreateAccountForm   

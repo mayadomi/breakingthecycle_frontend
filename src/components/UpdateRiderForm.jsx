@@ -1,14 +1,17 @@
 import { useState } from "react"; 
-import postCreateRider from "../../api/post-create-rider";
-import { useNavigate } from "react-router-dom";
+import putUpdateRider from "../../api/put-update-rider";
+import { useNavigate, useParams } from "react-router-dom";
 
 
-
-function CreateRiderForm() {
+function UpdateRiderForm() {
 
     const navigate = useNavigate();
+    const {id} = useParams()
+    const user = window.localStorage.getItem('id')
 
-    const user = localStorage.getItem('id')
+    const authToken = window.localStorage.getItem("token")
+    const [errorMessage, setErrorMessage] = useState("")
+    const [formInvalid, setFormInvalid] = useState("")
 
     const [riderdetails, setRiderDetails] = useState({
         team: "",
@@ -18,32 +21,37 @@ function CreateRiderForm() {
     })
 
     const handleChange = (event) => {
+        if (authToken){
         const {id, value} = event.target;
         setRiderDetails((prevDetails) => ({
             ...prevDetails,
             [id]: value,
         }))
+        }
+        else {
+            setFormInvalid("Not signed in")
+        }
     }
-
-    const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = (event) => {
 
         event.preventDefault()
-
-        if(riderdetails.team && riderdetails.bio && riderdetails.rate && riderdetails.kms_ceiling) {
-
+        if(id && riderdetails.team && riderdetails.bio && riderdetails.rate && riderdetails.kms_ceiling) {
             console.log("here")
-
-            postCreateRider(
+            putUpdateRider(
+                id,
                 riderdetails.team,
                 riderdetails.bio,
                 riderdetails.rate,
                 riderdetails.kms_ceiling
             ).then((response) => {
-                navigate(`/user/${response.rider_user_id}`)
-            }).catch((error) => {
-                setErrorMessage(`${[error.message]}`)
+                console.log(response)
+                if (response == "A rider already exists for this account"){
+                    navigate(`/${user}`)
+                } else {
+                // setUserID = response.id
+                // window.localStorage.setItem("token", response.token)
+                navigate(`/${response.rider_user_id}`)}
             })
         }
     }
@@ -73,12 +81,8 @@ function CreateRiderForm() {
             <input type="number" id="kms_ceiling" placeholder="100" onChange={handleChange} />
         </div> 
     
-        <button type="submit" onClick={handleSubmit}>Create Rider</button>
-        <div>
-            <p>{errorMessage}</p>
-            <sub className={errorMessage ? "" : "hidden"}></sub>
-        </div>
+        <button type="submit" onClick={handleSubmit}>Update Rider</button>
     </form>
     );
 }
-export default CreateRiderForm   
+export default UpdateRiderForm   

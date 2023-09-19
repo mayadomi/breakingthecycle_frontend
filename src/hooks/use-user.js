@@ -1,25 +1,22 @@
 import { useState, useEffect } from 'react';
-import getRiders from '../../api/get-riders';
+import getUser from '../../api/get-user';
 
-export default function useRiders() {
-    const [riders, setRiders] = useState([]);
+export default function useUser(id) {
+    const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
-    
-
     useEffect(() => {
-        getRiders()
-        .then((riders) => {
-            setRiders(riders);
+        getUser(id)
+        .then((user) => {
+            setUser(user);
             setIsLoading(false);
         })
         .catch((error) => {
             setError(error);
             setIsLoading(false);
         });
+    }, [id]);
 
-    }, );
-
-    return { riders, isLoading, error };
+    return { user, isLoading, error };
 }
