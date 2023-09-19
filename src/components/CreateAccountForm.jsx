@@ -2,14 +2,13 @@ import { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import postCreateAccount from "../../api/post-create-account";
 import postLogin from "../../api/post-login";
+import useAuth from "../hooks/use_authentication";
 
 
 function CreateAccountForm() {
 
     const navigate = useNavigate();
-
-    const authToken = window.localStorage.getItem("token")
-    //const {postSignUp} = useContext(AuthContext)
+    const {auth, setAuth } = useAuth()
 
     const [errorMessage, setErrorMessage] = useState("")
     const [formInvalid, setFormInvalid] = useState("")
@@ -23,7 +22,7 @@ function CreateAccountForm() {
     })
 
     const handleChange = (event) => {
-        if (!authToken){
+        if (!auth.token){
         const {id, value} = event.target;
         setSignupDetails((prevDetails) => ({
             ...prevDetails,
@@ -38,8 +37,7 @@ function CreateAccountForm() {
 
         event.preventDefault()
 
-        if (!authToken){
-
+        if (!auth.token){
             if(signupdetails.username && signupdetails.password && signupdetails.first_name && signupdetails.last_name && signupdetails.email) {
                 postCreateAccount(
                     signupdetails.username,
@@ -47,13 +45,15 @@ function CreateAccountForm() {
                     signupdetails.last_name,
                     signupdetails.email,
                     signupdetails.password
-                ).then(() => {
+                ).then((response) => {
                     postLogin(signupdetails.username, signupdetails.password).then(
                         (response) => {
                             window.localStorage.setItem("token", response.token)
                             window.localStorage.setItem("id", response.id)
                             navigate(`../user/${window.localStorage.getItem("id")}`)
+                            setAuth({token: response.token, id: response.id})
                         }
+                        
                     ).catch((error)=>{setErrorMessage(`${[error.message]}`)})
                 }).catch((error)=>{setErrorMessage(`${[error.message]}`)})
                 
