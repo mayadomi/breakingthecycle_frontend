@@ -20,7 +20,7 @@ function DonationPage() {
     const handleChange = e => setSearchTerm(e.target.value)
 
     return (
-    <div>
+    <>
         <div>Search for a rider</div>
 
         <input 
@@ -40,7 +40,7 @@ function DonationPage() {
             })}
         </div>
         
-    </div>
+    </>
     // <div><DonationForm /><div>   
     )
 

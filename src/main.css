@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Eczar&family=Jost&display=swap"); /* Base HTML Styles */
+
+:root {
+  --white: white;
+  --pale-purple: #F2BEFC;
+  --dark-purple: #825e9b;
+  --dark-grey: #2f3337;
+
+}
+
+/* CSS Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/* HERO */
+
+.hero {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bg-text{
+
+    display: flex;
+    align-items: center;
+    
+
+}
+
+
+.bg-text h1 {
+    font-size: 5rem;
+    color: whitesmoke;
+}
+
+.bg-text h3 {
+    font-size: 2rem;
+    color: whitesmoke;
+    margin: 24px;
+    
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.summary-text {
+    background-color: rgba(0, 0, 0, 0.541);
+    padding:16px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 10px;
+}
+
+.button-hero {
+    margin: 24px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 4px;
+    background-color: var(--pale-purple);
+}
+
+
+
+.bg-image {
+    background-image: url("../assets/STU_9171.jpg");
+    background-size: cover;
+    filter:grayscale(90%);
+    /* filter: blur(5px);
+    -webkit-filter: blur(5px);*/
+    height: 40em; 
+    /* width: 100em; */
+    background-position: middle ;
+    background-repeat: no-repeat;
+
+}
+
+.blur {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    height: 40em;
+    display: flex;
+}
+
+
+.targets {
+    background-color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+
+
+.targets h5 {
+    margin-top: 24px;
+    font-family: "Jost";
+    
+
+}
+
+.targets h2 {
+    font-family: "Eczar";
+    font-size: 5rem;
+}
+
+#fundraising-target {
+    width: 350px;
+    /* margin: 24px; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: var(--dark-purple);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#amount-raised {
+    width: 350px;
+    /* margin:24px; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: var(--dark-purple);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+#impact-purpose {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    background-color: var(--white);
+    color: black;
+}
+
+#impact-purpose h4 {
+    font-family: "Jost";
+    font-size: 2rem;
+    margin: 24px;
+}
+
+#impact-purpose ul {
+    /* list-style-image: url('../assets/noun-bicycle.svg'); */
+    list-style-type: disc;
+    margin: 12px;
+}
+
+#impact-purpose li {
+    font-family: "Jost";
+    font-size: 1.2rem;
+    margin-top: 24px;
+    margin-left: 48px;
+}
+
+#charity-title {
+    font-family: "Eczar";
+    margin:24px;
+    padding-bottom: 16px;
+}
+
+#charity-partners {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#charity-partners img {
+    width: 300px;
+    filter: grayscale();
+    
+}
+
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  
+  .donations-container {
+    background: var(--dark-purple);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .donations-container::before, .donations-container::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 110px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .donations-container::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .donations-container::before {
+    left: 0;
+    top: 0;
+  }
+
+  .donations-container .donations {
+
+    animation: scroll 30s linear both infinite;
+    display: flex;
+    justify-content: space-around;
+    width: calc(250px * 14);
+
+  }
+
+  .donations {
+    width: 200px;
+  }
+
+  .donation {
+    height: 110px;
+    width: 300px;
+    padding: 8px;
+    display: flex;
+    
+  }
+
+  .donation-details h4 {
+
+    font-family: "Eczar";
+    font-size: 1.6rem;
+    margin:16px;
+    
+  }
+
+  .donation .amount {
+    color: var(--dark-purple);
+    width: 250px;
+    background: round;
+    background-color: var(--pale-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 5px 5px #2f3337; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .donation-details {
+    width: 500px;
+  }
+  
+
+
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Global styles */
+body {
+  font-family: "Jost";
+  line-height: 1.5;
+  background-color: #6e7175
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Jost", cursive;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1 {
+  
+  font-size: 6rem;
+  color:var(--lime-green)
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 10rem;
+  }
+  
+  h2 {
+    font-size: 7rem;
+    color:var(--lime-green)
+  }
+  
+  h3 {
+    font-size: 5rem;
+  }
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+.small{
+  display: block;
+}
+/* Button and centre-styled elements */
+.centre-block-object {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.button {
+  border: 4px solid var(--pink);
+  color: var(--pink);
+  background-color: var(--pale-green);
+  border-radius: 10px;
+  font-family: "Just Another Hand", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+}
+
+.delete-button {
+  color: var(--font-blue);
+  border: 4px solid var(--font-blue);
+  background-color: var(--pastel-moss);
+  border-radius: 10px;
+  font-family: "Just Another Hand", cursive;
+  font-weight: bold;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .desktop-inline-buttons {
+    display: grid;
+    grid-template-columns: 50%;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+  }
+  .desktop-inline-buttons .button {
+    grid-row: 1;
+    margin: 0;
+  }
+}
+
+/* Error messages and hidden content */
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Form styling */
+.form {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form div {
+  display: grid;
+  grid-template-columns: 35% 65%;
+}
+
+.form div label {
+  grid-column: 1;
+}
+
+.form div input {
+  grid-column: 2;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .form {
+    max-width: 70%;
+  }
+}
+
+/* chuck in some spacing for non form elements */
+.article {
+  margin: 16px;
+}
+a:hover, .button:hover, .delete-button:hover{
+  text-shadow: 1px 1px 1px rgba(4, 14,33, 1);
+}

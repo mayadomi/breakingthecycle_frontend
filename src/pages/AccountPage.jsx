@@ -37,7 +37,8 @@ console.log("user ", user)
             <h5>Email: {user.email}</h5>
             <button onClick={updateAccountClick} >Click to update profile</button>
 
-            <h3>My donations</h3>
+            <h3>My donations:</h3>
+            
             
             <h3>Rider: </h3>
             <AccountRiderWrapper rider_id={user.rider} isUserLoading={isUserLoading}/>
