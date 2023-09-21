@@ -41,7 +41,7 @@ function HomePage() {
 
                         <div class="bg-text">
 
-                            <img src="../assets/cycle.svg" width="400"></img>
+                            <img src="../assets/logo.svg" width="400"></img>
                             <div class="summary">
                                 <h3 class="summary-text">On average, one woman a week is murdered by her current or former 
                                         partner and new resrearch shows that women overwhelming experience 
