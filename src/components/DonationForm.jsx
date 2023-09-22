@@ -2,14 +2,20 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import postDonation from '../../api/post-donation'
 import { useParams } from 'react-router-dom'
+import useAuth from '../hooks/use_authentication';
+import './DonationForm.css'
 
 
-function Donate() {
+function Donate(props) {
+  
+  const rate = "For every $ donated I will ride " + props.props + "kms"
+
 
   const navigate = useNavigate()
   const rider_id = useParams()
   const [isLoading, setIsLoading] = useState(false)
-  const authToken = window.localStorage.getItem("token")
+  const setAuth = useAuth()
+ 
 
   const [donationData, setDonationData] = useState({
     rider: rider_id.id,
@@ -40,7 +46,7 @@ function Donate() {
 
     setIsLoading(true)
     
-    if (authToken){
+    if (setAuth){
         postDonation(
             donationData.rider,
             donationData.amount,
@@ -78,17 +84,17 @@ function Donate() {
       <button onClick={handleDonationAmount} value='50'>50</button>
       <button onClick={handleDonationAmount} value='100'>100</button> */}
 
-      <div>
+      <div className='form-donation'>
         <label htmlFor="amount">Amount</label>
         <input 
           type="number" 
           id="amount" 
-          placeholder='Enter custom amount' 
+          placeholder={rate}
           onChange={handleChange} 
 
         />
       </div>
-      <div>
+      <div className='form-donation'>
         <label htmlFor="comment">Comment</label>
         <input 
           type="text" 
@@ -97,21 +103,26 @@ function Donate() {
           onChange={handleChange} 
         />
       </div>
-      <div>
-        <label htmlFor='anonymous'>Anonymous Donation</label>
+      <div className='form-donation-special'>
+        <label htmlFor='anonymous'>Anonymous?</label>
         <input
           type='checkbox'
           id='anonymous'
           onChange={handleChecked}
         />
       </div>
-      <input type="submit" value="Donate" />
+
+      <div className='form-donation'>
+      <input type="submit" value="Donate" id='submit' />
       <div>
             <p>{errorMessage}</p>
             <sub className={errorMessage ? "" : "hidden"}></sub>
             
         </div>
+        </div>
     </form>
+
+    
   )
 }
 

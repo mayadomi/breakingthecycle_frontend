@@ -2,6 +2,8 @@ import { useState, setState, useEffect } from 'react';
 
 import useRiders from '../hooks/use-riders'
 import RiderCard from '../components/RiderCard'
+import "../components/DonationPage.css"
+
 
 function DonationPage() {
 
@@ -21,23 +23,24 @@ function DonationPage() {
 
     return (
     <>
-        <div>Search for a rider</div>
-
-        <input 
+        {/* <div className='search-title'>Rider Leaderboard</div> */}
+        <div className='board-container'>
+        <input className='search-box'
             type='text' 
             value={searchTerm} 
             onChange={handleChange} 
-            placeholder='search'>
+            placeholder='Find a rider'>
         </input>
         
         {/* <p>search Term:{searchTerm}</p> */}
 
-        <div>
+        <div className='leader-board'>
             {riders.sort((a,b) => {
              return b.amount_donated - a.amount_donated 
             }).filter(o => o.rider_first_name.includes(searchTerm)).map((rider, key) => {
                 return <RiderCard key={key} riderData={rider}/>
             })}
+        </div>
         </div>
         
     </>

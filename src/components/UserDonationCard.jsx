@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
-import './RiderCard.css';
+// import './RiderCard.css';
 
 
 function UserDonationCard(props) {

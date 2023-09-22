@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Eczar&family=Jost&display=swap"); 
+
+.banner {
+    background-color: rgba(59, 47, 70, 0.822) ;
+    height: 150px;
+    
+}
+
+.rider-banner {
+    display: flex;
+    align-items: center;
+    text-shadow: 3px 8px 7px rgba(37, 33, 37, 0.8);
+    justify-content: space-between;
+   
+}
+
+.rider-banner h2 {
+    margin-left: 16px;
+}
+
+#token{
+
+    filter:grayscale(10);
+    
+    
+}
+
+h2 {
+    font-family: "Eczar";
+    font-size: 4rem;
+}
+
+
+h3 {
+    font-family: 'Jost';
+    font-size: 3rem;
+}
+
+h5 {
+    font-family: 'Jost';
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-family: 'Jost';
+    font-size: 2.5em;
+}
+
+.rider-body{
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--dark-grey);
+}
+
+.rider-body img {
+    width: 120px;
+    border-radius: 20px;
+    padding: 8px;
+    
+}
+
+#raised, #ride, #ridden, #days {
+    width: 150px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--dark-purple);
+    box-shadow: rgba(0, 0, 0, 0.2) 4px 10px 30px 10px;
+    text-align: center;
+}
+
+
+
+.rider-info {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;    
+    background-color: var(--white);
+    color: var(--dark-purple);
+    
+}
+
+.rider-info h3 {
+    padding: 12px;
+    font-family: 'Eczar';
+}
+
+.rider-info h5 {
+    padding: 12px;
+}
+
+
+.rider-headers h3 {
+    font-size: 2.8rem;
+    font-family: "Eczar";
+    padding: 20px;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    text-shadow: 3px 4px 7px rgba(100, 87, 99, 0.8);
+
+  }
+
+  .rider-sponsor{
+    background-color: var(--white);
+  }
+  .recent-donations{
+    background-color: var(--white);
+    color: var(--dark-purple);
+    font-family:'Jost';
+    font-size: 1.3rem;
+  }
+
+  .recent-donations li {
+    padding: 16px;
+  }
+
+  .update {
+    display: flex;
+    padding: 8px;
+  }
+
+  .update img {
+    width: 150px
+  }
+
+  .update p {
+    padding: 8px;
+  }

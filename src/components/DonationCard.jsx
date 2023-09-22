@@ -10,11 +10,10 @@ function DonationCard(props) {
         
 
     return (
-        <div class="donation">
-            <h4 class="amount">${donationData.amount}</h4>
-            <div class="donation-details">
-                    <h4 class="from"><strong>{donationData.donor_first_name} </strong>
-                     donated to {donationData.rider_first_name} {donationData.rider_last_name}</h4>
+        <div className="donation">
+            <h4 className="amount">${donationData.amount}</h4>
+            <div className="donation-details">
+                    <h4><span className="from">{donationData.donor_first_name}</span> donated to {donationData.rider_first_name} {donationData.rider_last_name}</h4>
             </div>
             {/* <Link to={riderPath} >
                 <h3>{riderData.rider_user_name}</h3>

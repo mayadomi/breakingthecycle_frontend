@@ -1,0 +1,67 @@
+.banner {
+    background-color: rgba(59, 47, 70, 0.822) ;
+    height: 150px;
+    
+}
+
+.user-banner {
+    display: flex;
+    align-items: center;
+    text-shadow: 3px 8px 7px rgba(37, 33, 37, 0.8);
+    justify-content: space-between;
+   
+}
+
+.user-banner h2 {
+    margin-left: 16px;
+}
+
+.user-headers h3{
+    font-size: 2rem;
+    font-family: "Eczar";
+    padding: 20px;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    text-shadow: 3px 4px 7px rgba(100, 87, 99, 0.8);
+}
+
+.user-info {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--dark-purple);
+    height: 150px;
+    align-items: left;
+    justify-content: space-around;
+    padding:8px
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    padding: 8px;
+}
+
+.user-details h5 {
+    padding:8px;
+}
+
+#update {
+    margin-left:16px;
+    width: 20%;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    border-radius: 8px;
+    border: 4px var(--darker-purple);
+    font-size: 1.2rem;
+
+}
+
+.self-donations{
+    background-color: var(--white);
+    color: var(--dark-purple);
+    font-size: 1.2rem;
+}

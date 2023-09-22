@@ -33,7 +33,7 @@ return(
     <div>
     {rider.rider_id != null ? (
     <div>
-<button onClick={updateRiderClick}>Click to update rider details</button>
+        <button onClick={updateRiderClick}>Click to update rider details</button >
 <RiderCard riderData={rider}></RiderCard></div>
 ) : (
 <button onClick={createRiderClick}>Create rider</button>
