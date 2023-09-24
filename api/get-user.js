@@ -1,8 +1,11 @@
+import useAuth from "../src/hooks/use_authentication";
+
 async function getUser(id){
-    console.log(id)
+    
     const url = `${import.meta.env.VITE_API_URL}/user/${id}`
 
-    const token = localStorage.getItem("token")
+    const {auth, setAuth} = useAuth()
+    const token = auth.token
 
     const response = await fetch(url, { 
         method: "GET",

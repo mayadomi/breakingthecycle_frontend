@@ -47,6 +47,7 @@
 #anonymous {
     width: 20px;
     border-color: var(--dark-purple);
+    accent-color: var(--dark-purple);
 }
 
 form {

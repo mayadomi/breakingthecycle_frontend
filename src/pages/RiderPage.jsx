@@ -28,36 +28,58 @@ function RiderPage() {
 
 
     return(
-        <div className="rider-main">
+        <div>
             <div className="banner">
                 <div className="rider-banner">
-                <img src="../assets/logo.svg" width="150"></img>
+                <img src="../assets/logo.svg" width="140"></img>
+                    <div className="holder">
+                        <div className="subholder">
+                        <p className="rider-special">
+                            <div class="verticalFlip">
+                                <span>Rider</span>
+                                <span>Adventurer</span>
+                                <span>Goal-kicker</span>
+                                <span>Inspiring</span>
+                                <span>Legend</span>
+                            </div>
+                        </p>
+                        </div>
                 <h2>{rider.rider_first_name} {rider.rider_last_name}</h2>
+                    </div>
                 <img src="../assets/lifecycle.jpg" width='150' id='token'/>
                 </div>
+                
+
+
             </div>
 
             <div className="rider-body">
                 <img src={rider.avatar_image}/>
 
                 <div id="raised">
-                    <h2>${rider.amount_donated}</h2>
+                    {rider.amount == null ?
+                    <h2>$0</h2> : <h2>${rider.amount_donated}</h2>}
                     <h5>Raised</h5>
                 </div>
 
                 <div id="ride">
-                    <h2>{rider.kms_to_ride}</h2>
-                    <h5>Kms to Ride</h5>
+                    {rider.kms_to_ride == null ?
+                    <h2>0<span className="units">kms</span></h2> : <h2>{rider.kms_to_ride}<span className="units">kms</span></h2>
+                    }
+                    <h5>To Ride</h5>
                 </div>
 
                 <div id="ridden">
-                <h2>{rider.kms_ridden}</h2>
-                    <h5>Kms Ridden So Far</h5>
+                    {rider.kms_ridden == null ?
+                    <h2>0<span class="units">kms</span></h2> :<h2>{rider.kms_ridden}<span className="units">kms</span></h2>
+                    }
+                    <h5>Ridden</h5>
 
                 </div>
                 <div id="days">
-                <h2>{days}</h2>
-                <h5>Days since start</h5>
+                    
+                <h2>{days}<span className="units">days </span></h2>
+                <h5>Into Training</h5>
 
                 </div>
 
@@ -83,6 +105,7 @@ function RiderPage() {
                 <div className="recent-donations">
 
                 <h3>Donations</h3>
+                {rider.donations?.length > 0 ?
                 <ul>
                     {rider.donations.sort((a,b) => {
                         return b.id - a.id
@@ -117,13 +140,16 @@ function RiderPage() {
                             </li>
                         );
                     })}
-                </ul>
+                </ul> : <div class="nothing-yet">No donations yet.</div>
+                }
                 </div>
             </div>
             <div className="rider-headers">
 
             <div className="recent-donations">
             <h3>Updates</h3>
+            {rider.updates?.length > 0 ? 
+            
             <ul>
             {rider.updates.map((updateData, key) => {
                     return (
@@ -136,7 +162,9 @@ function RiderPage() {
                         </li>
                     );
                 })}
-            </ul>
+            </ul> : <div className="nothing-yet">No updates yet. </div>
+            }
+
             </div>
             </div>
         </div>

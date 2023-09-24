@@ -1,9 +1,11 @@
+import useAuth from "../src/hooks/use_authentication";
+
 async function postDonation(rider, amount, comment, anonymous){
     const url = `${import.meta.env.VITE_API_URL}/donations/`;
-
-    console.log(rider)
     
-    const token = localStorage.getItem("token")
+    const {auth, setAuth} = useAuth()
+    
+    const token = auth.token
 
     const response = await fetch(url, {
         method: "POST",

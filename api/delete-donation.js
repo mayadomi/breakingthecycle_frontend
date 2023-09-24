@@ -1,25 +1,22 @@
 import useAuth from "../src/hooks/use_authentication";
-async function putUpdateRider(id, team, bio, rate, kms_ceiling){
-    const url = `${import.meta.env.VITE_API_URL}/rider/${id}`;
+
+async function deleteDonation(id){
+    
     const {auth, setAuth} = useAuth()
+    const url = `${import.meta.env.VITE_API_URL}/donation/${id}/`;
+    
     const token = auth.token
 
     const response = await fetch(url, {
-        method: "PUT",
+        method: "DELETE",
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Token " + token
         },
-        body: JSON.stringify({
-            "team": team,
-            "bio": bio,
-            "rate": rate,
-            "kms_ceiling": kms_ceiling
-        })
     })
 
     if (!response.ok) {
-        const fallbackError = `Error trying to create user account`
+        const fallbackError = `Error trying to delete donation`
 
         const data = await response.json().catch(() => {
             throw new Error(fallbackError)
@@ -33,4 +30,4 @@ async function putUpdateRider(id, team, bio, rate, kms_ceiling){
 }
 
 
-export default putUpdateRider
+export default deleteDonation

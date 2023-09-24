@@ -1,19 +1,18 @@
-.banner {
-    background-color: rgba(59, 47, 70, 0.822) ;
-    height: 150px;
-    
-}
-
 .user-banner {
+    background-color: rgba(59, 47, 70, 0.822) ;
+    padding-left: 8px;
     display: flex;
     align-items: center;
     text-shadow: 3px 8px 7px rgba(37, 33, 37, 0.8);
     justify-content: space-between;
-   
+    height: 150px;
+    
 }
 
 .user-banner h2 {
+    text-align:center;
     margin-left: 16px;
+    margin-right:16px;
 }
 
 .user-headers h3{
@@ -26,12 +25,11 @@
 }
 
 .user-info {
-    height: 200px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     background-color: var(--white);
     color: var(--dark-purple);
-    height: 150px;
     align-items: left;
     justify-content: space-around;
     padding:8px
@@ -49,19 +47,46 @@
     padding:8px;
 }
 
-#update {
+.update-button {
     margin-left:16px;
+    margin-bottom: 8px;
     width: 20%;
     background-color: var(--dark-purple);
     color: var(--white);
     border-radius: 8px;
     border: 4px var(--darker-purple);
     font-size: 1.2rem;
+}
 
+.update-button:hover{
+    cursor: pointer;
 }
 
 .self-donations{
     background-color: var(--white);
     color: var(--dark-purple);
     font-size: 1.2rem;
+    padding-left: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.no-donations {
+    padding: 24px;
+}
+
+.account-rider-info {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--dark-purple);
+    align-items: left;
+    justify-content: space-around;
+    padding:8px;
+    ;
+}
+
+.account-rider-details .rider-card {
+    margin: 8px;
 }

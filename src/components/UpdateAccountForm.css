@@ -1,0 +1,121 @@
+
+.user-update-banner {
+    color: var(--white);
+    background-color: rgba(59, 47, 70, 0.822) ;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    text-shadow: 3px 8px 7px rgba(37, 33, 37, 0.8);
+    justify-content: space-between;
+    height: 150px;
+}
+
+.user-update-banner h2 {
+    text-align: center;
+    margin-left: 16px;
+    margin-right:16px;
+}
+
+.user-update-headers h3 {
+    font-size: 2rem;
+    font-family: "Eczar";
+    padding: 20px;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    text-shadow: 3px 4px 7px rgba(100, 87, 99, 0.8);
+}
+
+
+
+#token{
+
+    filter:grayscale(10);
+
+}
+
+
+.form-update-user label {
+    font-family: 'Eczar';
+    font-size: 1.8rem;
+    margin: 8px;
+}
+
+.form-update-user input {
+    height: 30px;
+    border-radius: 3px;
+    border:3px solid var(--darker-purple);
+    opacity: .8;
+    width: 100%;
+    margin-left: 8px;
+    word-wrap:normal;
+    
+}
+
+#bio{
+    height:160px;
+
+    border-radius: 3px;
+    border:3px solid var(--darker-purple);
+    opacity: .8;
+    width: 40%;
+    margin-left: 8px;
+    word-wrap:normal;
+
+}
+
+#update-user-submit {
+    background-color: var(--dark-purple);
+    color: var(--white);
+    opacity: 1;
+    font-family: 'Eczar';
+    font-size: 1.5rem;
+    width: 200px;
+    margin-top: 24px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+
+.form-update-user {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: flex-start;
+    padding: 8px;
+    background-color: var(--white);
+    flex-wrap: wrap;
+}
+
+
+
+
+
+#update-submit {
+    background-color: var(--dark-purple);
+    color: var(--white);
+    opacity: 1;
+    font-family: 'Eczar';
+    font-size: 1.5rem;
+    width:200px;
+    border-color: var(--darker-purple) 2px;
+    border-style:solid;
+    border-radius: 8px;
+    margin-top: 12px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+
+.form-user-special {
+    font-family: 'Eczar';
+    font-size: 1.8rem;
+    width:40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#is_active {
+    width: 20px;
+    border-color: var(--dark-purple);
+    accent-color: var(--dark-purple);
+}

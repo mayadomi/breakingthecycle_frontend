@@ -29,8 +29,18 @@ function AccountPage() {
     const updateAccountClick = () => {
         {navigate(`/user/${id}/update-user`)}
     }
+
+    const deleteDonationClick = () => {
+        use
+    }
  
     const formatedDate = new Date(user.date_joined)
+
+    if(user.donations != []) {
+        const donationsExist = true
+    } else {
+        const donationsExist =  false
+    } 
     
     console.log(user.donations)
 
@@ -39,7 +49,7 @@ function AccountPage() {
 
             <div className="banner">
                 <div className="user-banner">
-                <img src="../assets/logo.svg" width="150"></img>
+                <img src="../assets/logo.svg" width="140"></img>
                 <h2>{user.first_name} {user.last_name}</h2>
                 <img src="../assets/lifecycle.jpg" width='150' id='token'/>
                 </div>
@@ -57,42 +67,46 @@ function AccountPage() {
                 </div>
 
 
-            <button id="update" onClick={updateAccountClick} >Update profile</button>
+            <button className="update-button" onClick={updateAccountClick} >Update profile</button>
 
             </div>
 
             <div className="user-headers">
-                <div className="self-donations">
-                    <h3>My donations:</h3>
+                
+                    <h3>My donations</h3>
+                    <div className="self-donations">
                     <ul>
-                        {user.donations.map((donationData, key) => {
-
-                            const dateDonated = new Date(donationData.date_donated)
-                            const day = dateDonated.getDay()
-                            const month = dateDonated.getMonth()
-                            const year = dateDonated.getFullYear()
-
-                            return(
-                                <li key={key}>
+                        {
+                            user.donations?.length > 0 ?
+                            user.donations.map((donationData, key) => {
+                                const dateDonated = new Date(donationData.date_donated)
+                                const day = dateDonated.getDay()
+                                const month = dateDonated.getMonth()
+                                const year = dateDonated.getFullYear()
+                                return(<li key={key}>
                                     <div>
-                                    
-                                   <p> ${donationData.amount} on  {day}/{month}/{year}</p>
-                                   </div>
-                                </li>
-                                
-                            )
-                        })}
+                                        <p> ${donationData.amount} on  {day}/{month}/{year}</p>
+                                        <button>Delete this donation</button>
+                                    </div>
+                                    </li>)
+                                }
+                                )
+                                :<div className="no-donations">No donations made yet</div>
+                        }
                     </ul>
             </div>
+            <h5>Delete one of my donations</h5>
             </div>
 
             <div className="user-headers">
 
             
-            <h3>My Rider: </h3>
+            <h3>My Rider </h3>
+            <div className="account-rider-info">
             <AccountRiderWrapper rider_id={user.rider} isUserLoading={isUserLoading}/>
             </div>
             
+        </div>
         </div>
     );
 }

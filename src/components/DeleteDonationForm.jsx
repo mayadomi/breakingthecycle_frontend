@@ -1,29 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import postDonation from '../../api/post-donation'
+import useDeleteDonation from '../hooks/use-delete-donation';
 import { useParams } from 'react-router-dom'
 import useAuth from '../hooks/use_authentication';
-import './DonationForm.css'
+import './DeleteDonationForm.css'
 
 
-function Donate(props) {
+function DeleteDonation(props) {
   
-  const rate = "For every $ donated I will ride " + props.props + "kms"
+
   const navigate = useNavigate()
-  const rider_id = useParams()
+  const donation_id = props
   const [isLoading, setIsLoading] = useState(false)
   const {auth, setAuth } = useAuth()
   const [errorMessage, setErrorMessage] = useState("")
   const [formInvalid, setFormInvalid] = useState("")
  
-
-  const [donationData, setDonationData] = useState({
-    rider: rider_id.id,
-    amount: 0,
-    comment: '',
-    anonymous: false
-  })
-
 
   const handleChange = (event) => {
     if (auth.token) {

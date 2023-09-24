@@ -1,0 +1,94 @@
+
+.rider-update-banner {
+    color: var(--white);
+    background-color: rgba(59, 47, 70, 0.822) ;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    text-shadow: 3px 8px 7px rgba(37, 33, 37, 0.8);
+    justify-content: space-between;
+    height: 150px;
+}
+
+.rider-update-banner h2 {
+    text-align: center;
+    margin-left: 16px;
+    margin-right:16px;
+}
+
+.rider-update-headers h3 {
+    font-size: 2rem;
+    font-family: "Eczar";
+    padding: 20px;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    text-shadow: 3px 4px 7px rgba(100, 87, 99, 0.8);
+}
+
+
+
+#token{
+
+    filter:grayscale(10);
+
+}
+
+
+.form-update-rider label {
+    font-family: 'Eczar';
+    font-size: 1.8rem;
+    margin: 8px;
+}
+
+.form-update-rider input {
+    height: 30px;
+    border-radius: 3px;
+    border:3px solid var(--darker-purple);
+    opacity: .8;
+    width: 100%;
+    margin-left: 8px;
+    word-wrap:normal;
+    
+}
+
+#bio{
+    height:160px;
+
+    border-radius: 3px;
+    border:3px solid var(--darker-purple);
+    opacity: .8;
+    width: 40%;
+    margin-left: 8px;
+    word-wrap:normal;
+
+}
+
+#update-rider-submit {
+    background-color: var(--dark-purple);
+    color: var(--white);
+    opacity: 1;
+    font-family: 'Eczar';
+    font-size: 1.5rem;
+    width: 200px;
+    margin-top: 24px;
+    margin-left: 12px;
+    border-color: var(--darker-purple) 2px;
+    border-style:solid;
+    cursor: pointer;
+}
+
+
+.form-update-rider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: flex-start;
+    padding: 8px;
+    background-color: var(--white);
+    flex-wrap: wrap;
+}
+
+
+
+
+
