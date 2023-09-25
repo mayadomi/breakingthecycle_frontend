@@ -49,8 +49,11 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
+<p align="center">
+<a href="https://breaking-the-cycle.netlify.app/"><img src="./public/assets/homepage.gif" alt="BreakingTheCycle" width="500"></a>
+</p>
 
-![screenshot](public/assets/homepage.gif)
+
 
 ## Project Deployment
 
