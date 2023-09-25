@@ -1,8 +1,8 @@
 import useAuth from "../src/hooks/use_authentication";
 async function putUpdateRider(id, team, bio, rate, kms_ceiling){
     const url = `${import.meta.env.VITE_API_URL}/rider/${id}`;
-    const {auth, setAuth} = useAuth()
-    const token = auth.token
+    //const {auth, setAuth} = useAuth()
+    const token = window.localStorage.getItem("token")
 
     const response = await fetch(url, {
         method: "PUT",

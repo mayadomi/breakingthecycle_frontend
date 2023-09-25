@@ -53,11 +53,10 @@
 
 #bio{
     height:160px;
-
     border-radius: 3px;
     border:3px solid var(--darker-purple);
     opacity: .8;
-    width: 40%;
+    width: 100%;
     margin-left: 8px;
     word-wrap:normal;
 
@@ -88,8 +87,6 @@
 
 
 
-
-
 #update-submit {
     background-color: var(--dark-purple);
     color: var(--white);
@@ -97,12 +94,17 @@
     font-family: 'Eczar';
     font-size: 1.5rem;
     width:200px;
-    border-color: var(--darker-purple) 2px;
-    border-style:solid;
+    border: solid 3px var(--darker-purple);
     border-radius: 8px;
     margin-top: 12px;
     margin-left: 8px;
     cursor: pointer;
+    text-shadow:3px 4px 7px rgba(27, 26, 27, 0.8);
+
+}
+
+#update-submit:hover {
+    background-color: var(--darker-purple);
 }
 
 

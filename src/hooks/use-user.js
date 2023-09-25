@@ -9,6 +9,7 @@ export default function useUser(id) {
     useEffect(() => {
         getUser(id)
         .then((user) => {
+            
             setUser(user);
             setIsLoading(false);
         })

@@ -41,6 +41,9 @@ html {
 
 }
 
+.bg-text img {
+  margin: 24px;
+}
 
 .bg-text h1 {
     font-size: 5rem;
@@ -68,13 +71,6 @@ html {
     border-radius: 10px;
 }
 
-.button-hero {
-    margin: 24px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    padding: 4px;
-    background-color: var(--pale-purple);
-}
 
 
 
@@ -103,7 +99,7 @@ html {
     background-color: var(--dark-grey);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -131,6 +127,7 @@ html {
     align-items: center;
     flex-direction: column;
     padding: 16px;
+    margin-right:40px;
     border-radius: 10px;
     background-color: var(--dark-purple);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -145,6 +142,7 @@ html {
     flex-direction: column;
     padding: 16px;
     border-radius: 10px;
+    margin-left: 40px;
     background-color: var(--dark-purple);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
@@ -159,7 +157,7 @@ html {
 
 .impact-purpose h4 {
     font-family: "Jost";
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 24px;
 }
 
@@ -167,19 +165,39 @@ html {
     /* list-style-image: url('../assets/noun-bicycle.svg'); */
     list-style-type: disc;
     margin: 12px;
+    
 }
 
 .impact-purpose li {
     font-family: "Jost";
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 24px;
     margin-left: 48px;
+    font-size:1.5rem;
 }
 
 .impact {
     background-color: var(--white);
     padding: 24px;
+    display:flex;
+    direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
+
+.impact-images img {
+  size: 100%;
+  filter: grayscale(0.7);
+}
+
+.impact-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #charity-title {
     font-family: "Eczar";
@@ -319,7 +337,9 @@ html {
 
 #rider-list{
     min-height: 800px;
+    
 }
+
 
 
 

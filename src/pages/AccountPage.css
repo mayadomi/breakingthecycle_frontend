@@ -56,11 +56,17 @@
     border-radius: 8px;
     border: 4px var(--darker-purple);
     font-size: 1.2rem;
-}
-
-.update-button:hover{
+    border-radius: 6px;
+    border: var(--darker-purple) 3px solid;
+    font-family: 'Eczar';
+    text-shadow:3px 4px 7px rgba(27, 26, 27, 0.8);
     cursor: pointer;
 }
+
+.update-button:hover {
+    background-color: var(--darker-purple);
+}
+
 
 .self-donations{
     background-color: var(--white);
@@ -89,4 +95,48 @@
 
 .account-rider-details .rider-card {
     margin: 8px;
+}
+
+.user-not-loggedin {
+    height: 100px;
+    background-color: var(--white);
+    align-items: center;
+    display: flex;
+}
+
+.user-not-loggedin button {
+   
+        background-color: var(--dark-purple);
+        color: var(--white);
+        opacity: 1;
+        font-family: 'Eczar';
+        font-size: 1.5rem;
+        width: 300px;
+        border-radius: 6px;
+        border: var(--darker-purple) 3px solid;
+        margin-left: 16px;
+        cursor: pointer;
+        
+}
+
+.donation-delete {
+    display: flex;
+    align-content: center;
+    text-align: center;
+}
+.donation-delete p {
+    align-self: center;
+}
+
+
+.delete-donation {
+    margin: 8px;
+    width: 20%;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    border-radius: 8px;
+    border: 4px var(--darker-purple);
+    font-size: 1.2rem;
+    cursor: pointer;
+    
 }

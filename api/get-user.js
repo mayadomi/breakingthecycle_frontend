@@ -1,11 +1,15 @@
-import useAuth from "../src/hooks/use_authentication";
+import React, { useContext } from "react";
+import { useState } from "react";
+import { AuthContext } from "../src/components/AuthenticationProvider";
+AuthContext
+
 
 async function getUser(id){
-    
+       
     const url = `${import.meta.env.VITE_API_URL}/user/${id}`
-
-    const {auth, setAuth} = useAuth()
-    const token = auth.token
+    
+    // This surely should be a context/state thing, but could not get it to work
+    const token = window.localStorage.getItem("token")
 
     const response = await fetch(url, { 
         method: "GET",
@@ -15,7 +19,7 @@ async function getUser(id){
                 "Authorization": "Token " + token
             },
     });
-    console.log(response)
+    
     if (!response.ok) {
         const fallbackError = "Error fetching user account";
 

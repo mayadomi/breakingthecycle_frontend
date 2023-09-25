@@ -48,7 +48,7 @@ function HomePage() {
                                         partner and new resrearch shows that women overwhelming experience 
                                         physical assault at home.</h3>
                                 
-                                <button className="button-hero" onClick={handleClick}>Donate Now</button>
+                                
                             </div>
                         </div>
                     
@@ -77,6 +77,12 @@ function HomePage() {
                 <div className="section-header"><h3>About</h3></div>
 
                 <div className="impact">
+                    <div className="impact-images">
+                        
+                        <img src="../../assets/lifecycle.jpg"></img>
+
+                    </div>
+                <div className="impact-text">
                 <h4>
                     Every year LifeCycle Cycling Club brings together the cycling and broader community for
                     a cycling criterium race event to:
@@ -98,11 +104,12 @@ function HomePage() {
                             hostile, exclusionary behaviours and practices.
                         </li>
                     </ul>
-                </div>
+                </div></div>
 
                 <div className="section-header"><h3>How</h3></div>
                     <div className="impact">
-                        <h4>Each woman who signs up to race in any of the event races has the opportunity to
+                        
+                        <div className="impact-text"><h4>Each woman who signs up to race in any of the event races has the opportunity to
                         create a Rider profile to fundraise for the event's charity partners.</h4>
                         
                         <h4>For every $ donated to the rider, it adds to the target kms for her to train in preparation
@@ -123,11 +130,15 @@ function HomePage() {
                             Bicycle handling skills - cornering, slowing, speeding up, stopping, hand signals etc.
                         </li>
                     </ul>
-                       <h4>As women sign up, fundraise and train together they start to build the confidence, skills, experience and networks
+                    <h4>As women sign up, fundraise and train together they start to build the confidence, skills, experience and networks
                         to keep riding long after the event; sustaining engagement, wellbeing and revitalising women's
-                        cycling and racing communities and inpsiring younger generations to participate.</h4> 
-
+                        cycling and racing communities and inpsiring younger generations to participate.</h4>
                     </div>
+                    <div className="impact-images">
+                        <img src="../../assets/lifecycle_2.jpg"></img>
+                        </div>
+                    </div>
+                        
         
 
             </div>

@@ -66,7 +66,19 @@ function CreateAccountForm() {
         }
 
     return(
-    <form>
+
+        <div>
+        <div className="banner">
+                <div className="user-banner">
+                <img src="../assets/logo.svg" width="140"></img>
+                <h2>Create an Account</h2>
+                <img src="../assets/lifecycle.jpg" width='150' id='token'/>
+                </div>
+            </div>
+            <div className="user-headers">
+                <h3>Enter details below</h3>
+            </div>
+    <form className="form-update-user">
         <div>
             <label htmlFor="username">Username:</label>
             {/* <input type="text" id ="username" placeholder="Enter username" /> */}
@@ -94,13 +106,13 @@ function CreateAccountForm() {
             {/* <input type="password" id="password" placeholder="Password" /> */}
             <input type="password" id="password" placeholder="Password" onChange={handleChange} />
         </div> 
-        <button type="submit" onClick={handleSubmit}>Sign Up</button>
+        <button id="update-submit" type="submit" onClick={handleSubmit}>Sign Up</button>
         <div>
             <p>{errorMessage}</p>
             <sub className={errorMessage ? "" : "hidden"}><p>{formInvalid}</p></sub>
             
         </div>
     </form>
-    );
+    </div>);
 }
 export default CreateAccountForm   

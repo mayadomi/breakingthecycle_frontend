@@ -3,9 +3,8 @@ import useAuth from "../src/hooks/use_authentication";
 async function postCreateRider(team, bio, rate, kms_ceiling){
     const url = `${import.meta.env.VITE_API_URL}/riders/`;
     
-    const {auth, setAuth} = useAuth()
-    const token = auth.token
-
+    //const {auth, setAuth} = useAuth()
+    const token = window.localStorage.getItem("token")
     const response = await fetch(url, {
         method: "POST",
         headers: {

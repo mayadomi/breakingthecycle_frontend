@@ -1,9 +1,10 @@
 import useAuth from "../src/hooks/use_authentication";
+
 async function putUpdateAccount(id, first_name, last_name, email, is_active){
     
     const url = `${import.meta.env.VITE_API_URL}/user/${id}/`;
-    const {auth, setAuth} = useAuth()
-    const token = auth.token
+    //const {auth, setAuth} = useAuth()
+    const token = window.localStorage.getItem("token")
 
     const response = await fetch(url, {
         method: "PUT",

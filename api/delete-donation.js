@@ -1,11 +1,11 @@
 import useAuth from "../src/hooks/use_authentication";
 
-async function deleteDonation(id){
+async function deleteDonation(donation_id){
     
-    const {auth, setAuth} = useAuth()
-    const url = `${import.meta.env.VITE_API_URL}/donation/${id}/`;
+    // const {auth, setAuth} = useAuth()
+    const url = `${import.meta.env.VITE_API_URL}/donation/${donation_id}`;
     
-    const token = auth.token
+    const token = window.localStorage.getItem("token")
 
     const response = await fetch(url, {
         method: "DELETE",

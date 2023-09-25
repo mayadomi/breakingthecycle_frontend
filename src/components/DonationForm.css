@@ -21,7 +21,17 @@
     opacity: 1;
     font-family: 'Eczar';
     font-size: 1.5rem;
-    width:100px;
+    width:200px;
+    border: solid 3px var(--darker-purple);
+    border-radius: 8px;
+    margin-top: 12px;
+    margin-left: 8px;
+    cursor: pointer;
+    text-shadow:3px 4px 7px rgba(27, 26, 27, 0.8);
+}
+
+#submit:hover {
+    background-color: var(--darker-purple);
 }
 
 .form-donation{

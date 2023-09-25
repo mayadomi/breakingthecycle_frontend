@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+
 import deleteDonation from '../../api/delete-donation';
 
-export default function useDeleteDonation() {
-    const [deletion, setDeletion] = useState(true);
+export default function useDeleteDonation(donation_id) {
+    const [deleted, setDeletion] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
     useEffect(() => {
-        getDeleteDonation(id)
-        .then((deletion) => {
+        deleteDonation(donation_id)
+        .then(() => {
             setDeletion(true)
             setIsLoading(false);
         })
@@ -18,5 +18,5 @@ export default function useDeleteDonation() {
         });
     }, []);
 
-    return { deletion, isLoading, error };
+    return { deleted, isLoading, error };
 }
