@@ -148,6 +148,7 @@ html {
 }
 
 
+
 .impact-purpose {
     /* padding-top: 24px; */
     padding-bottom: 32px;
@@ -155,10 +156,11 @@ html {
     color: black;
 }
 
-.impact-purpose h4 {
+.impact-purpose .impact-text h4 {
     font-family: "Jost";
     font-size: 1.7rem;
     margin: 24px;
+    line-height: 150%;
 }
 
 .impact-purpose ul {
@@ -344,8 +346,76 @@ html {
   background-color: var(--white);
 }
 
+footer {
+  background-image: url('/public/assets/lifecycle_6.jpeg');
+  background-size:100%;
+  background-blend-mode:overlay;
+  background-color: #2f3337;
+  height: 200px;
+  filter: grayscale(0.9);
+  background-position: 52% 30%
+}
+
+footer img {
+  margin-top: 24px;
+  margin-left: 24px;
+  height:75px;
+  padding-top:15px;
+  padding-bottom:15px;
+
+}
+
+footer img:hover{
+  background-color: var(--pale-purple);
+  border-radius: 25px;
+}
+
+.lifecycle:hover {
+  color: var(--white);
+  background-color: var(--dark-purple);
+  border-radius: 5px;
+  padding: 3px;
+}
 
 
+
+@media (max-width:650px) {
+  h3 {
+    font-size: 1rem;
+  }
+
+  #logo-main {
+    margin-top: 50px;
+    width:260px;
+  }
+
+  .summary h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .bg-text {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .targets{
+    flex-direction: column;
+   
+  }
+
+  .targets h2 {
+    font-size: 4rem;
+  }
+
+  #fundraising-target, #amount-raised {
+    margin:20px;
+    width: 250px;
+    
+  }
+ 
+  
+}
 body,
 h1,
 h2,

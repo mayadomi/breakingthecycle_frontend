@@ -5,6 +5,7 @@ import deleteDonation from "../../api/delete-donation";
 import useDeleteDonation from "../hooks/use-delete-donation";
 import { useNavigate, useParams } from 'react-router-dom';
 import RiderCard from "../components/RiderCard";
+import RiderUpdateKms from "../components/RiderKmsUpdate";
 import AccountRiderWrapper from "../components/AccountRiderWrapper";
 import './AccountPage.css'
 import LoginPage from "./LoginPage";
@@ -119,19 +120,19 @@ function AccountPage() {
             
             <h3>My Rider </h3>
             <div className="account-rider-info">
-            <AccountRiderWrapper rider_id={user.rider} isUserLoading={isUserLoading}/>
+                <div><AccountRiderWrapper rider_id={user.rider} isUserLoading={isUserLoading}/></div>
+
             </div>
+            <div className="update-form">
+                <h3>Post an update for your rider</h3>
+                <RiderUpdateKms rider_id={user.rider}></RiderUpdateKms>
+            </div>
+        </div>
             
-        </div></div>
+        
+        </div>
 
             )}
-
-            
-           
-
-            
-
-            
 
         </div>
     );

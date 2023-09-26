@@ -121,3 +121,21 @@
     border-color: var(--dark-purple);
     accent-color: var(--dark-purple);
 }
+
+
+  
+@media (max-width:650px) {
+  .user-banner img {
+    width: 100px;
+    margin-left: 12px;
+  }
+
+  .user-banner h2 {
+    font-size: 3rem;
+  }
+
+  .board-container{
+    padding: 16px;
+  }
+
+}

@@ -69,3 +69,20 @@ form {
 }
 
 
+
+  
+@media (max-width:650px) {
+    .form-donation {
+        width: 90%;
+    }
+
+    .form-donation input {
+      width: 100%;
+    }
+  
+    .board-container{
+      padding: 16px;
+    }
+  
+  }
+  

@@ -20,16 +20,13 @@ function NavBar() {
       console.log(auth)
     };
 
-
+    
 
     
     return (
     <div>
-
         
         <nav className="nav-bar-desktop">
-
-
 
             <Link className="logo-link" to="/">
             <img className="logo-link" src="../assets/logo_square.svg" width="140"></img>

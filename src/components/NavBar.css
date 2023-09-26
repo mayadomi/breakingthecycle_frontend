@@ -13,29 +13,27 @@ a {
   }
 
 
+
   .logo-link {
     margin-left: 8px;
   }
 
   
   .nav-links a {
-    padding: 20px;
-    font-size: 1.2rem;
+    margin: 24px;
+    font-size: 2rem;
   }
 
   .nav-links a:hover {
     background-color: var(--pale-purple);
     border-radius: 8px;
     padding: 20px;
-  }
-
-
-  
+  } 
   .nav-links button {
     margin-right: 16px;
     color: var(--white) ;
-    font-size: 1.2rem;
-    background-color: var(--dark-grey);
+    font-size: 2rem;
+    background-color: transparent;
     border:none;
     cursor: pointer;
   }
@@ -44,7 +42,6 @@ a {
     background-color: var(--pale-purple);
     border-radius: 8px;
     height: 64px;
-
   }
   
     
@@ -62,3 +59,53 @@ a {
   }
   
   
+  @media (max-width:650px) {
+
+    .nav-links {
+        margin-left: 12px;
+    }
+
+    .nav-bar-desktop {
+        background: var(--dark-grey);
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        justify-content: center;
+        background: linear-gradient(90deg,var(--dark-purple) 35%,var(--dark-grey)80%);
+        
+      }
+
+    .nav-links a {
+        margin: 8px;
+        font-size: 1.6rem;
+    }
+    
+      .logo-link img {
+      display: none;
+      }
+
+    
+    .nav-links button {
+        margin-right: 16px;
+        color: var(--white) ;
+        font-size: 1.6rem;
+        background-color: transparent;
+        border:none;
+        cursor: pointer;
+      }
+
+      .nav-links button:hover {
+        background-color: var(--pale-purple);
+        border-radius: 8px;
+
+      }
+
+      
+    .nav-links a:hover {
+    background-color: var(--pale-purple);
+    border-radius: 8px;
+
+  } 
+    
+  }

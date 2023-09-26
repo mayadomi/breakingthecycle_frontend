@@ -1,10 +1,13 @@
 import useAuth from "../src/hooks/use_authentication";
+async function postUpdateRiderKms(id, description, image, kms_ridden){
 
-async function postDonation(rider, amount, comment, anonymous){
-    const url = `${import.meta.env.VITE_API_URL}/donations/`;
-    
-    // const {auth, setAuth} = useAuth()
-    
+    const url = `${import.meta.env.VITE_API_URL}/rider/${id}/updates/`;
+
+    console.log(id)
+    console.log(url)
+    //const {auth, setAuth} = useAuth()
+
+    // token should be of user owning rider page/object
     const token = window.localStorage.getItem("token")
 
     const response = await fetch(url, {
@@ -14,29 +17,26 @@ async function postDonation(rider, amount, comment, anonymous){
             "Authorization": "Token " + token
         },
         body: JSON.stringify({
-            "rider": rider,
-            "amount": amount,
-            "comment": comment,
-            "anonymous": anonymous
+            "description": description,
+            "image": image,
+            "kms_ridden": kms_ridden
         })
     })
 
     if (!response.ok) {
-        const fallbackError = `Error trying to process donation`
+        console.log(response.json())
+        const fallbackError = `Error trying to create user account`
 
         const data = await response.json().catch(() => {
-            throw new Error(fallbackError);
+            throw new Error(fallbackError)
         })
-        
-        // console.log(data)
+
         const errorMessage = data?.detail ?? fallbackError
         throw new Error(errorMessage)
     }
-
-
     return await response.json()
 
 }
 
 
-export default postDonation
+export default postUpdateRiderKms

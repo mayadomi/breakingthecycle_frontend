@@ -39,3 +39,15 @@
 
 
 
+
+  
+@media (max-width:650px) {
+  .search-box {
+    width: 360px;
+  }
+
+  .board-container{
+    padding: 16px;
+  }
+
+}

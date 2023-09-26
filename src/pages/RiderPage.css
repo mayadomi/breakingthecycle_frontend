@@ -50,7 +50,15 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     background-color: var(--dark-grey);
+}
+
+.rider-body-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .rider-body img {
@@ -285,3 +293,30 @@ body {
 	100% { opacity: 0; }
 }
 
+
+  
+@media (max-width:650px) {
+
+    .rider-banner img {
+        width:100px;
+        margin-left: 12px;
+    }
+
+    #token {
+        display: none;
+    }
+
+    .holder h2 {
+        font-size: 3rem;
+    }
+
+    .verticalFlip span {
+        font-size: 1rem;
+    }
+    
+    .fillerStyles {
+       width: 270px;
+    }
+       
+     }
+    

@@ -12,9 +12,9 @@ function RiderPage() {
 
     const {rider, isLoading, error} = useRider(id)
     
-    if (isLoading){
-        return<div>I'm still loading</div>
-    }
+    // if (isLoading){
+    //     return<div>I'm still loading</
+    // }
 
     console.log(rider.date_created)
 
@@ -34,30 +34,27 @@ function RiderPage() {
                 <img src="../assets/logo.svg" width="140"></img>
                     <div className="holder">
                         <div className="subholder">
-                        <p className="rider-special">
-                            <div class="verticalFlip">
+                        <h5 className="rider-special">
+                            <div className="verticalFlip">
                                 <span>Rider</span>
                                 <span>Adventurer</span>
                                 <span>Goal-kicker</span>
                                 <span>Inspiring</span>
                                 <span>Legend</span>
                             </div>
-                        </p>
+                        </h5>
                         </div>
                 <h2>{rider.rider_first_name} {rider.rider_last_name}</h2>
                     </div>
                 <img src="../assets/lifecycle.jpg" width='150' id='token'/>
-                </div>
-                
-
-
+                </div>   
             </div>
 
             <div className="rider-body">
                 <img src={rider.avatar_image}/>
-
+                <div class='rider-body-wrap'>
                 <div id="raised">
-                    {rider.amount == null ?
+                    {rider.amount_donated == null ?
                     <h2>$0</h2> : <h2>${rider.amount_donated}</h2>}
                     <h5>Raised</h5>
                 </div>
@@ -71,7 +68,7 @@ function RiderPage() {
 
                 <div id="ridden">
                     {rider.kms_ridden == null ?
-                    <h2>0<span class="units">kms</span></h2> :<h2>{rider.kms_ridden}<span className="units">kms</span></h2>
+                    <h2>0<span className="units">kms</span></h2> :<h2>{rider.kms_ridden}<span className="units">kms</span></h2>
                     }
                     <h5>Ridden</h5>
 
@@ -82,7 +79,7 @@ function RiderPage() {
                 <h5>Into Training</h5>
 
                 </div>
-
+                </div>
 
             </div>
             <div className="rider-info">
@@ -140,7 +137,7 @@ function RiderPage() {
                             </li>
                         );
                     })}
-                </ul> : <div class="nothing-yet">No donations yet.</div>
+                </ul> : <div className="nothing-yet">No donations yet.</div>
                 }
                 </div>
             </div>

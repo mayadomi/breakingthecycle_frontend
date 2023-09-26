@@ -82,9 +82,10 @@
 }
 
 .account-rider-info {
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     background-color: var(--white);
     color: var(--dark-purple);
     align-items: left;
@@ -135,8 +136,18 @@
     background-color: var(--dark-purple);
     color: var(--white);
     border-radius: 8px;
-    border: 4px var(--darker-purple);
+    border: 3px var(--darker-purple) solid;
     font-size: 1.2rem;
     cursor: pointer;
+    text-shadow:3px 4px 7px rgba(27, 26, 27, 0.8);
     
+}
+
+.update-form{
+ background-color: var(--white);   
+}
+
+.delete-donation:hover{
+    background-color: var(--darker-purple);
+
 }

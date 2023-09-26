@@ -42,7 +42,7 @@ function HomePage() {
 
                         <div className="bg-text">
 
-                            <img src="../assets/logo.svg" width="400"></img>
+                            <img id='logo-main' src="../assets/logo.svg" width="400"></img>
                             <div className="summary">
                                 <h3 className="summary-text">On average, one woman a week is murdered by her current or former 
                                         partner and new resrearch shows that women overwhelming experience 
@@ -84,7 +84,7 @@ function HomePage() {
                     </div>
                 <div className="impact-text">
                 <h4>
-                    Every year LifeCycle Cycling Club brings together the cycling and broader community for
+                    Every year <a className="lifecycle" href="https://lifecycle.org.au/">LifeCycle Cycling Club</a> brings together the cycling and broader community for
                     a cycling criterium race event to:
                 </h4>
                     <ul>
@@ -115,7 +115,7 @@ function HomePage() {
                         <h4>For every $ donated to the rider, it adds to the target kms for her to train in preparation
                         for the race.</h4> 
 
-                        <h4>As certain funding and training milestones are completed, LifeCycle Cycling Club will run
+                        <h4>As certain funding and training milestones are completed, <a className='lifecycle' href="https://lifecycle.org.au/">LifeCycle Cycling Club</a> will run
                         training and skills sessions for the riders, including: </h4>
                         <ul>
                         <li>How does a criterium race format work
@@ -160,8 +160,8 @@ function HomePage() {
 
             <div id="charity-partners">
                 <a href="https://www.whiteribbon.org.au/" ><img src="../assets/white_ribbon.jpg"></img></a>
-                <a href="https://www.beyonddv.org.au/"><img src="../assets/bdv.png"></img></a>
-                <a href="https://bdvs.org.au/"><img src="../assets/bdvslogo.png"></img></a>
+                <a href="https://www.beyonddv.org.au/"><img src="../assets/BDV.png"></img></a>
+                <a href="https://bdvs.org.au/"><img src="../assets/BDVSLogo.png"></img></a>
                 <a href="https://www.smallsteps4hannah.com.au/"><img src="../assets/f4h.png"></img></a>
             </div>
 
@@ -172,7 +172,14 @@ function HomePage() {
             <div id="rider-list">
                 <DonationPage />
             </div> 
+
+            <footer>
+                <a href="https://github.com/mayadomi/breakingthecycle_frontend"><img src="../assets/GitHub-logo.png"></img></a>
+            
+            </footer>
         </div>
+
+
     );
 }
 export default HomePage;

@@ -14,11 +14,25 @@
 
  .labelStyles {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-left: 16px;
+    width: 375px;
     height:24px;
     color: var(--white);
     font-weight: 'bold';
     
   }
+
+  
+@media (max-width:650px) {
+
+.labelStyles {
+   width: 200px;
+}
+
+.fillerStyles {
+   width: 270px;
+}
+   
+ }

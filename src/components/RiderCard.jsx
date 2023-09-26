@@ -37,10 +37,17 @@ function RiderCard(props) {
                 <img src={riderData.avatar_image} />
                 <div className='rider-details'>
                     <h4 id='rider-name'>{riderData.rider_first_name} {riderData.rider_last_name}</h4>
-                    <div>{riderData.amount_donated == null ? (<h4 className='raised'>$0 raised</h4>) : (<h4 className='raised'>${riderData.amount_donated} raised</h4>) } </div>
+
+                    <div>{riderData.amount_donated == null ? 
+                    (<h4 className='raised'>$0 raised | {riderData.rate}km for every $</h4>)
+                     : 
+                    (<h4 className='raised'>${riderData.amount_donated} raised | {riderData.rate}km for every $</h4>) } </div>
                     
-                    {/* <h4>{riderData.kms_to_ride}</h4> */}
-                <div className='containerStyles'><ProgressBar completed={riderData.kms_ridden} toComplete={riderData.kms_to_ride}/></div>
+                <div className='containerStyles'> 
+                {riderData.kms_to_ride == null ?
+                (<ProgressBar completed={riderData.kms_ridden} toComplete={0}/>)
+                :
+                (<ProgressBar completed={riderData.kms_ridden} toComplete={riderData.kms_to_ride}/>)}</div>
                 </div>
                 
             </Link>
