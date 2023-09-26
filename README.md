@@ -119,7 +119,7 @@ You can [download](https://github.com/amitmerchant1990/electron-markdownify/rele
 - [X] A screenshot of the project creation page
   - ![Project creation page](public/assets/ProjectPage.JPG)
 - [X] A screenshot of the pledge creation form
-  - ![Pledge creation page](public/assets/RiderPage_PledgeCreation.jpg)
+  - ![Pledge creation page](public/assets/RiderPage_PledgeCreation.JPG)
 - [X] A screenshot of a project with pledges
   - ![Project with pledges](public/assets/ProjectPage.JPG)
 - [X] A screenshot of the resulting page when an unauthorized user attempts to edit a project (optional, depending on whether or not this functionality makes sense in your app!)

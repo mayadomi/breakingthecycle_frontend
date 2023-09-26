@@ -17,6 +17,7 @@ const ProgressBar = (props) => {
     } else if (completed == toComplete) {
       if (window.innerWidth < 650){
         progress= 270
+        progressText= completed + "kms ridden of " + toComplete
       } else {
         progress= 375
         progressText= completed + "kms ridden of " + toComplete
@@ -27,6 +28,7 @@ const ProgressBar = (props) => {
 
       if (window.innerWidth < 650 ) {
         progress= 270
+        progressText = completed + "kms ridden of " + toComplete
       } else {
         progress= 375
         progressText = completed + "kms ridden of " + toComplete
