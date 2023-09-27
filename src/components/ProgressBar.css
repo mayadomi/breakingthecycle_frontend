@@ -28,6 +28,7 @@
 @media (max-width:650px) {
 
 .labelStyles {
+   font-size: 0.9rem;
    width: 200px;
 }
 

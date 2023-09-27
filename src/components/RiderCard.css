@@ -94,7 +94,7 @@ content: "";
 @media (max-width:650px) {
 
     .rider-card a {
-        width: 360px;
+        width: 340px;
     }
 
     .rider-card h4 {
@@ -116,7 +116,7 @@ content: "";
 
     .containerStyles  {
         height: 24px;
-        width: 280px;
+        width: 260px;
         background-color: var(--dark-grey);
         opacity: 0.8;
         border-radius:6px;
@@ -126,7 +126,7 @@ content: "";
       }
 
       .fillerStyles {
-        width: 280px;
+        width: 260px;
       }
 
   }
